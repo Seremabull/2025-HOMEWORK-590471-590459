@@ -20,11 +20,13 @@ public class Partita {
 	private Giocatore giocatore=new Giocatore();
 	private boolean finita;
 	private int cfu;
+	private IO io;
 	
-	public Partita(){
+	public Partita(IO io){
 		labirinto.creaStanze();
 		this.finita = false;
 		this.cfu = CFU_INIZIALI;
+		this.io=io;
 	}
 
     /**
@@ -80,5 +82,23 @@ public class Partita {
 
 	public void setGiocatore(Giocatore giocatore) {
 		this.giocatore = giocatore;
+	}
+
+	public boolean giocatoreIsVivo() {
+		if(giocatore.getCfu()>0)
+			return true;
+		return false;
+	}
+	
+	public Stanza getStanzaCorrente() {
+		return this.getLabirinto().getStanzaCorrente();
+	}
+	
+	public void setStanzaCorrente(Stanza stanza) {
+		this.labirinto.setStanzaCorrente(stanza);
+	}
+	
+	public IO getIo() {
+		return io;
 	}
 }

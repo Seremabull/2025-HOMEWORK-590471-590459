@@ -21,4 +21,11 @@ static final private int CFU_INIZIALI = 20;
 	public void setBorsa(Borsa borsa) {
 		this.borsa = borsa;
 	}
+
+	@Override
+	public String toString() {
+		return "Giocatore [cfu=" + cfu + "]";
+	}
+	
+	
 }
