@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class IOConsole implements IO {
 
+	private Scanner scannerDiLinee;
 	public void mostraMessaggio(String msg) {
 		System.out.println(msg);
 	}
@@ -15,5 +16,7 @@ public class IOConsole implements IO {
 		return riga;
 	}
 	
-	
+	public IOConsole(Scanner scannerDiLinee) {
+		this.scannerDiLinee=scannerDiLinee;
+	}
 }

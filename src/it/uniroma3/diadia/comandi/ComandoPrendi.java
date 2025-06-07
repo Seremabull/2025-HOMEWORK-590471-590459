@@ -3,7 +3,7 @@ package it.uniroma3.diadia.comandi;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
-public class ComandoPrendi implements Comando{
+public class ComandoPrendi extends AbstractComando{
 
 	String nomeAttrezzo;
 
@@ -29,7 +29,7 @@ public class ComandoPrendi implements Comando{
 
 
 		if(pesoBorsa+pesoAttrezzo<= pesoMax) {
-			if(partita.getLabirinto().getStanzaCorrente().removeAttrezzo(attrezzo)) {
+			if(partita.getLabirinto().getStanzaCorrente().removeAttrezzo(nomeAttrezzo)) {
 				if(partita.getGiocatore().getBorsa().addAttrezzo(attrezzo)) {
 
 					partita.getIo().mostraMessaggio("Attrezzo "+nomeAttrezzo+ " aggiunto nella borsa");
@@ -58,7 +58,7 @@ public class ComandoPrendi implements Comando{
 		return "prendi";
 	}
 
-	@Override
+	
 	public String getParametro() {
 		// TODO Auto-generated method stub
 		return this.nomeAttrezzo;

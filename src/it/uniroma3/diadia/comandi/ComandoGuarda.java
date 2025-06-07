@@ -2,7 +2,7 @@ package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.diadia.Partita;
 
-public class ComandoGuarda implements Comando {
+public class ComandoGuarda extends AbstractComando {
 
 	
 	@Override
@@ -11,7 +11,8 @@ public class ComandoGuarda implements Comando {
 		partita.getIo().mostraMessaggio(partita.getGiocatore().getBorsa().toString());
 		partita.getIo().mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
 		partita.getIo().mostraMessaggio(partita.getGiocatore().toString());
-		
+		partita.getIo().mostraMessaggio(partita.getGiocatore().getBorsa().getContenutoOrdinatoPerPeso().toString());
+		partita.getIo().mostraMessaggio(partita.getGiocatore().getBorsa().getContenutoOrdinatoPerNome().toString());
 		
 	}
 
@@ -25,9 +26,5 @@ public class ComandoGuarda implements Comando {
 		return "guarda";
 	}
 
-	@Override
-	public String getParametro() {
-		return null;
-	}
 
 }

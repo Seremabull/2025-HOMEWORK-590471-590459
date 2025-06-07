@@ -3,7 +3,7 @@ package it.uniroma3.diadia.comandi;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
-public class ComandoPosa implements Comando{
+public class ComandoPosa extends AbstractComando{
 
 	String nomeAttrezzo;
 
@@ -37,9 +37,8 @@ public class ComandoPosa implements Comando{
 		return "posa";
 	}
 
-	@Override
+	
 	public String getParametro() {
-		// TODO Auto-generated method stub
 		return this.nomeAttrezzo;
 	}
 
